@@ -44,7 +44,7 @@
     // Ask to see list
     if (prompt("Welcome! Would you like to see your list of contacts? (yes/no)") === "yes") {
       document.getElementById("contacts").style.visibility = "visible";
-      setTimeout(askForSlot, 1);
+      setTimeout(askForSlot, 100);
     }
     else {
       askForSlot();
