@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Contacts</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <table id="contacts">
+    <tr>
+      <th>Slot #</th>
+      <th>Name</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>Arndold</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Sly</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Dwayne</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Vin</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>JCVD</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Steven</td>
+    </tr>
+  </table>
+  
+  <script>
+    // Ask to see list
+    if (prompt("Welcome! Would you like to see your list of contacts? (yes/no)") === "yes") {
+      document.getElementById("contacts").style.visibility = "visible";
+      setTimeout(askForSlot, 1);
+    }
+
+    function askForSlot() {
+      // Setup variables
+      const contacts = ["Arnold", "Sly", "Dwayne", "Vin", "JCVD", "Steven"];
+      let quit = false;
+      let slot;
+  
+      // Loop for slots
+      while (!quit) {
+        // Ask for slot
+        slot = prompt("Which slot do you want to look at?");
+        
+        // If in array
+        if (contacts.at(slot) != undefined) {
+          alert("You selected " + contacts.at(slot) + ".");
+        }
+        // If not in array
+        else {
+          alert("There is no name with your slot.");
+        }
+        // Ask for another slot and repeat loop
+        if (prompt("Do you want to look at another slot? (yes/no)").toLowerCase() === "no") {
+          quit = true;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
